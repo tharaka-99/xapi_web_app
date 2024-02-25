@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="text/javascript" src="xapiwrapper.min.js"></script>
+    <script type="text/javascript" src="xapi-statement.js"></script>
+    <script type="text/javascript" src="query.js"></script>
+  </head>
+  <body>
+    <button onclick="sendStatement()">btn</button>
+    <button onclick="StartTimer()">StartTimer</button>
+    <button onclick="StopAndSendTimer()">StopAndSendTimer</button>
+    <button onclick="queryStatement()">Get LRS</button>
+  </body>
+</html>
+
+<script type="text/javascript">
+  function StartTimer() {
+    manageTimer.course.start();
+  }
+
+  function StopAndSendTimer() {
+    manageTimer.course.stop();
+    sendStatement();
+    manageTimer.course.reset();
+  }
+</script>
